@@ -1,0 +1,25 @@
+syntax="proto3";
+
+package msgtypes.config.v1;
+
+message Config {
+  repeated ConfigOption option = 1; 
+}
+
+message ConfigOption {
+  oneof configOpt {
+    PlainOption plainOption = 1;
+    ComplexOption nestedOption = 2;
+  }
+}
+
+message PlainOption {
+  string key = 1;
+  string value = 2;
+}
+
+message ComplexOption {
+  string key = 1;
+  Config value = 2;
+}
+

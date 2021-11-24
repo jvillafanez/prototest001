@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package ocisservices.config.v1;
+
+import "google/api/annotations.proto";
+import "msgtypes/config/v1/types.proto";
+
+service ConfigService {
+	rpc GetConfig(GetConfigRequest) returns (GetConfigResponse) {
+		option (google.api.http) = {
+			post: "/api/v1/config/get-config";
+			body: "*";
+		};
+	}
+}
+
+message GetConfigRequest {}
+
+message GetConfigResponse {
+  msgtypes.config.v1.Config config = 1;
+}
