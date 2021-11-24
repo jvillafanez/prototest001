@@ -1,5 +1,5 @@
 version: v1
-name: buf.build/jvillafanez/ocissservices
+name: buf.build/jvillafanez/ocisservices
 lint:
   use:
     - DEFAULT
