@@ -1,6 +1,6 @@
 syntax="proto3";
 
-package msgtypes.config.v1;
+package msgtypes.v1;
 
 message Config {
   repeated ConfigOption option = 1; 
