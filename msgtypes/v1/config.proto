@@ -7,9 +7,9 @@ message Config {
 }
 
 message ConfigOption {
-  oneof configOpt {
-    PlainOption plainOption = 1;
-    ComplexOption nestedOption = 2;
+  oneof config_opt {
+    PlainOption plain_option = 1;
+    ComplexOption nested_option = 2;
   }
 }
 
