@@ -1,6 +1,6 @@
 syntax="proto3";
 
-package msgtypes.v1;
+package ocis.config.v1;
 
 message Config {
   repeated ConfigOption option = 1; 

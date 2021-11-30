@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package ocisservices.v1;
+package ocis.accounts.v1;
 
-import "msgtypes/v1/accounts.proto";
+import "ocis/accounts/v1/types.proto";
 import "google/api/field_behavior.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
@@ -21,7 +21,7 @@ service AccountsService {
     }
     // Gets an account
     //rpc GetAccount(GetAccountRequest) returns (Account) {
-    rpc GetAccount(GetAccountRequest) returns (msgtypes.v1.Account) {
+    rpc GetAccount(GetAccountRequest) returns (Account) {
         option (google.api.http) = {
             post: "/api/v1/accounts/accounts-get",
             body: "*"
@@ -29,7 +29,7 @@ service AccountsService {
     }
     // Creates an account
     //rpc CreateAccount(CreateAccountRequest) returns (Account) {
-    rpc CreateAccount(CreateAccountRequest) returns (msgtypes.v1.Account) {
+    rpc CreateAccount(CreateAccountRequest) returns (Account) {
         // Create maps to HTTP POST. URL path as the collection name.
         // HTTP request body contains the resource
         option (google.api.http) = {
@@ -39,7 +39,7 @@ service AccountsService {
     }
     // Updates an account
     //rpc UpdateAccount(UpdateAccountRequest) returns (Account) {
-    rpc UpdateAccount(UpdateAccountRequest) returns (msgtypes.v1.Account) {
+    rpc UpdateAccount(UpdateAccountRequest) returns (Account) {
         // Update maps to HTTP PATCH. Resource name is mapped to a URL path.
         // Resource is contained in the HTTP request body
         option (google.api.http) = {
@@ -68,14 +68,14 @@ service GroupsService {
         };
     }
     // Gets an groups
-    rpc GetGroup(GetGroupRequest) returns (msgtypes.v1.Group) {
+    rpc GetGroup(GetGroupRequest) returns (Group) {
         option (google.api.http) = {
             post: "/api/v1/accounts/groups-get",
             body: "*"
         };
     }
     // Creates a group
-    rpc CreateGroup(CreateGroupRequest) returns (msgtypes.v1.Group) {
+    rpc CreateGroup(CreateGroupRequest) returns (Group) {
         // Create maps to HTTP POST. URL path as the collection name.
         // HTTP request body contains the resource
         option (google.api.http) = {
@@ -84,7 +84,7 @@ service GroupsService {
         };
     }
     // Updates a group
-    rpc UpdateGroup(UpdateGroupRequest) returns (msgtypes.v1.Group) {
+    rpc UpdateGroup(UpdateGroupRequest) returns (Group) {
         // Update maps to HTTP PATCH. Resource name is mapped to a URL path.
         // Resource is contained in the HTTP request body
         option (google.api.http) = {
@@ -108,7 +108,7 @@ service GroupsService {
     // or the stack overflow question https://stackoverflow.com/questions/49362894/why-is-the-microsoft-graph-api-using-ref-in-the-uri
 
     // group:addmember https://docs.microsoft.com/en-us/graph/api/group-post-members?view=graph-rest-1.0&tabs=http
-    rpc AddMember(AddMemberRequest) returns (msgtypes.v1.Group) {
+    rpc AddMember(AddMemberRequest) returns (Group) {
         //  All request parameters go into body.
         option (google.api.http) = {
             post: "/api/v1/groups/{group_id=*}/members/$ref"
@@ -116,7 +116,7 @@ service GroupsService {
         };
     }
     // group:removemember https://docs.microsoft.com/en-us/graph/api/group-delete-members?view=graph-rest-1.0
-    rpc RemoveMember(RemoveMemberRequest) returns (msgtypes.v1.Group) {
+    rpc RemoveMember(RemoveMemberRequest) returns (Group) {
         //  All request parameters go into body.
         option (google.api.http) = {
             // URLs are broken
@@ -192,7 +192,7 @@ message ListAccountsResponse {
     // The field name should match the noun "accounts" in the method name.  There
     // will be a maximum number of items returned based on the page_size field
     // in the request
-    repeated msgtypes.v1.Account accounts = 1;
+    repeated Account accounts = 1;
 
     // Token to retrieve the next page of results, or empty if there are no
     // more results in the list
@@ -205,12 +205,12 @@ message GetAccountRequest {
 
 message CreateAccountRequest {
     // The account resource to create
-    msgtypes.v1.Account account = 1;
+    Account account = 1;
 }
 
 message UpdateAccountRequest {
     // The account resource which replaces the resource on the server
-    msgtypes.v1.Account account = 1;
+    Account account = 1;
 
     // The update mask applies to the resource. For the `FieldMask` definition,
     // see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
@@ -258,7 +258,7 @@ message ListGroupsResponse {
     // The field name should match the noun "group" in the method name.  There
     // will be a maximum number of items returned based on the page_size field
     // in the request
-    repeated msgtypes.v1.Group groups = 1;
+    repeated Group groups = 1;
 
     // Token to retrieve the next page of results, or empty if there are no
     // more results in the list
@@ -271,12 +271,12 @@ message GetGroupRequest {
 
 message CreateGroupRequest {
     // The account resource to create
-    msgtypes.v1.Group group = 1;
+    Group group = 1;
 }
 
 message UpdateGroupRequest {
     // The group resource which replaces the resource on the server
-    msgtypes.v1.Group group = 1;
+    Group group = 1;
 
     // The update mask applies to the resource. For the `FieldMask` definition,
     // see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
@@ -340,7 +340,7 @@ message ListMembersResponse {
     // The field name should match the noun "members" in the method name.  There
     // will be a maximum number of items returned based on the page_size field
     // in the request
-    repeated msgtypes.v1.Account members = 1;
+    repeated Account members = 1;
 
     // Token to retrieve the next page of results, or empty if there are no
     // more results in the list
