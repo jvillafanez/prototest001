@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ocis.accounts.v1;
+package ocismsgs.v1;
 
 import "google/protobuf/timestamp.proto";
 // Account follows the properties of the ms graph api user resource.

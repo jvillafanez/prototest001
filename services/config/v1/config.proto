@@ -1,9 +1,9 @@
 syntax="proto3";
 
-package ocis.config.v1;
+package config.v1;
 
-import "ocis/config/v1/types.proto";
 import "google/api/annotations.proto";
+import "ocismsgs/v1/config.proto";
 
 service ConfigService {
 	rpc GetConfig(GetConfigRequest) returns (GetConfigResponse) {
@@ -17,5 +17,5 @@ service ConfigService {
 message GetConfigRequest {}
 
 message GetConfigResponse {
-  Config config = 1;
+  ocismsgs.v1.Config config = 1;
 }

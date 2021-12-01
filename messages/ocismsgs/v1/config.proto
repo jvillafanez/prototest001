@@ -1,15 +1,15 @@
 syntax="proto3";
 
-package ocis.config.v1;
+package ocismsgs.v1;
 
 message Config {
   repeated ConfigOption option = 1; 
 }
 
 message ConfigOption {
-  oneof config_opt {
-    PlainOption plain_option = 1;
-    ComplexOption nested_option = 2;
+  oneof configOpt {
+    PlainOption plainOption = 1;
+    ComplexOption nestedOption = 2;
   }
 }
 
