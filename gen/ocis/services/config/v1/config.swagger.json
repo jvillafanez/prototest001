@@ -1,0 +1,136 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ocis/services/config/v1/config.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "ConfigService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/config/get-config": {
+      "post": {
+        "operationId": "ConfigService_GetConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetConfigRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ConfigService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1ComplexOption": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/v1Config"
+        }
+      }
+    },
+    "v1Config": {
+      "type": "object",
+      "properties": {
+        "option": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ConfigOption"
+          }
+        }
+      }
+    },
+    "v1ConfigOption": {
+      "type": "object",
+      "properties": {
+        "plainOption": {
+          "$ref": "#/definitions/v1PlainOption"
+        },
+        "nestedOption": {
+          "$ref": "#/definitions/v1ComplexOption"
+        }
+      }
+    },
+    "v1GetConfigRequest": {
+      "type": "object"
+    },
+    "v1GetConfigResponse": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "$ref": "#/definitions/v1Config"
+        }
+      }
+    },
+    "v1PlainOption": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

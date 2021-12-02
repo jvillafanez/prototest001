@@ -1,0 +1,29 @@
+version: v1
+plugins:
+  - name: go
+    path: ../../ocis/.bingo/protoc-gen-go
+    out: ../gen/
+    opt:
+      - paths=source_relative
+
+  - name: micro
+    path: ../../ocis/.bingo/protoc-gen-micro
+    out: ../gen/
+    opt:
+      - paths=source_relative
+
+  - name: microweb
+    path: ../../ocis/.bingo/protoc-gen-microweb
+    out: ../gen/
+    opt:
+      - paths=source_relative
+
+  - name: openapiv2
+    path: ../../ocis/.bingo/protoc-gen-openapiv2
+    out: ../gen/
+
+  - name: doc
+    path: ../../ocis/.bingo/protoc-gen-doc
+    out: ../docs/extensions
+    opt:
+      - ../docs/GRPC.tmpl,grpc.md,source_relative
