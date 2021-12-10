@@ -23,9 +23,7 @@ func (h *webConfigServiceHandler) ServeHTTP(w http.ResponseWriter, r *http.Reque
 }
 
 func (h *webConfigServiceHandler) GetConfig(w http.ResponseWriter, r *http.Request) {
-
 	req := &GetConfigRequest{}
-
 	resp := &GetConfigResponse{}
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
