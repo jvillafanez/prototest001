@@ -28,7 +28,7 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| account | [ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) |  | The account resource to create |
+| account | [ocis.messages.accounts.v1.Account](../../../messages/accounts/v1/grpc.md#account) |  | The account resource to create |
 
 ### CreateGroupRequest
 
@@ -36,7 +36,7 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| group | [ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) |  | The account resource to create |
+| group | [ocis.messages.accounts.v1.Group](../../../messages/accounts/v1/grpc.md#group) |  | The account resource to create |
 
 ### DeleteAccountRequest
 
@@ -95,7 +95,7 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| accounts | [ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) | repeated | The field name should match the noun "accounts" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
+| accounts | [ocis.messages.accounts.v1.Account](../../../messages/accounts/v1/grpc.md#account) | repeated | The field name should match the noun "accounts" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
 | next_page_token | [string](#string) |  | Token to retrieve the next page of results, or empty if there are no more results in the list |
 
 ### ListGroupsRequest
@@ -123,7 +123,7 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| groups | [ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) | repeated | The field name should match the noun "group" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
+| groups | [ocis.messages.accounts.v1.Group](../../../messages/accounts/v1/grpc.md#group) | repeated | The field name should match the noun "group" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
 | next_page_token | [string](#string) |  | Token to retrieve the next page of results, or empty if there are no more results in the list |
 
 ### ListMembersRequest
@@ -152,7 +152,7 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| members | [ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) | repeated | The field name should match the noun "members" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
+| members | [ocis.messages.accounts.v1.Account](../../../messages/accounts/v1/grpc.md#account) | repeated | The field name should match the noun "members" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
 | next_page_token | [string](#string) |  | Token to retrieve the next page of results, or empty if there are no more results in the list |
 
 ### RebuildIndexRequest
@@ -180,7 +180,7 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| account | [ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) |  | The account resource which replaces the resource on the server |
+| account | [ocis.messages.accounts.v1.Account](../../../messages/accounts/v1/grpc.md#account) |  | The account resource which replaces the resource on the server |
 | update_mask | [google.protobuf.FieldMask](#googleprotobuffieldmask) |  | The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask |
 
 ### UpdateGroupRequest
@@ -189,7 +189,7 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| group | [ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) |  | The group resource which replaces the resource on the server |
+| group | [ocis.messages.accounts.v1.Group](../../../messages/accounts/v1/grpc.md#group) |  | The group resource which replaces the resource on the server |
 | update_mask | [google.protobuf.FieldMask](#googleprotobuffieldmask) |  | The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask |
 
 
@@ -202,9 +202,9 @@ https://cloud.google.com/apis/design/naming_convention?hl=de
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | ListAccounts | [ListAccountsRequest](#listaccountsrequest) | [ListAccountsResponse](#listaccountsresponse) | Lists accounts |
-| GetAccount | [GetAccountRequest](#getaccountrequest) | [.ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) | Gets an account rpc GetAccount(GetAccountRequest) returns (Account) { |
-| CreateAccount | [CreateAccountRequest](#createaccountrequest) | [.ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) | Creates an account rpc CreateAccount(CreateAccountRequest) returns (Account) { |
-| UpdateAccount | [UpdateAccountRequest](#updateaccountrequest) | [.ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) | Updates an account rpc UpdateAccount(UpdateAccountRequest) returns (Account) { |
+| GetAccount | [GetAccountRequest](#getaccountrequest) | [.ocis.messages.accounts.v1.Account](../../../messages/accounts/v1/grpc.md#account) | Gets an account rpc GetAccount(GetAccountRequest) returns (Account) { |
+| CreateAccount | [CreateAccountRequest](#createaccountrequest) | [.ocis.messages.accounts.v1.Account](../../../messages/accounts/v1/grpc.md#account) | Creates an account rpc CreateAccount(CreateAccountRequest) returns (Account) { |
+| UpdateAccount | [UpdateAccountRequest](#updateaccountrequest) | [.ocis.messages.accounts.v1.Account](../../../messages/accounts/v1/grpc.md#account) | Updates an account rpc UpdateAccount(UpdateAccountRequest) returns (Account) { |
 | DeleteAccount | [DeleteAccountRequest](#deleteaccountrequest) | [.google.protobuf.Empty](#googleprotobufempty) | Deletes an account |
 
 ### GroupsService
@@ -214,12 +214,12 @@ https://cloud.google.com/apis/design/naming_convention?hl=de
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | ListGroups | [ListGroupsRequest](#listgroupsrequest) | [ListGroupsResponse](#listgroupsresponse) | Lists groups |
-| GetGroup | [GetGroupRequest](#getgrouprequest) | [.ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) | Gets an groups |
-| CreateGroup | [CreateGroupRequest](#creategrouprequest) | [.ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) | Creates a group |
-| UpdateGroup | [UpdateGroupRequest](#updategrouprequest) | [.ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) | Updates a group |
+| GetGroup | [GetGroupRequest](#getgrouprequest) | [.ocis.messages.accounts.v1.Group](../../../messages/accounts/v1/grpc.md#group) | Gets an groups |
+| CreateGroup | [CreateGroupRequest](#creategrouprequest) | [.ocis.messages.accounts.v1.Group](../../../messages/accounts/v1/grpc.md#group) | Creates a group |
+| UpdateGroup | [UpdateGroupRequest](#updategrouprequest) | [.ocis.messages.accounts.v1.Group](../../../messages/accounts/v1/grpc.md#group) | Updates a group |
 | DeleteGroup | [DeleteGroupRequest](#deletegrouprequest) | [.google.protobuf.Empty](#googleprotobufempty) | Deletes a group |
-| AddMember | [AddMemberRequest](#addmemberrequest) | [.ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) | group:addmember https://docs.microsoft.com/en-us/graph/api/group-post-members?view=graph-rest-1.0&tabs=http |
-| RemoveMember | [RemoveMemberRequest](#removememberrequest) | [.ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) | group:removemember https://docs.microsoft.com/en-us/graph/api/group-delete-members?view=graph-rest-1.0 |
+| AddMember | [AddMemberRequest](#addmemberrequest) | [.ocis.messages.accounts.v1.Group](../../../messages/accounts/v1/grpc.md#group) | group:addmember https://docs.microsoft.com/en-us/graph/api/group-post-members?view=graph-rest-1.0&tabs=http |
+| RemoveMember | [RemoveMemberRequest](#removememberrequest) | [.ocis.messages.accounts.v1.Group](../../../messages/accounts/v1/grpc.md#group) | group:removemember https://docs.microsoft.com/en-us/graph/api/group-delete-members?view=graph-rest-1.0 |
 | ListMembers | [ListMembersRequest](#listmembersrequest) | [ListMembersResponse](#listmembersresponse) | group:listmembers https://docs.microsoft.com/en-us/graph/api/group-list-members?view=graph-rest-1.0 |
 
 ### IndexService

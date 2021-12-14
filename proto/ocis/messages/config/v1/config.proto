@@ -1,8 +1,8 @@
 syntax="proto3";
 
-package ocis.messages.v1;
+package ocis.messages.config.v1;
 
-option go_package = "github.com/jvillafanez/prototest001/gen/ocis/messages/v1";
+option go_package = "github.com/jvillafanez/prototest001/gen/ocis/messages/config/v1";
 
 message Config {
   repeated ConfigOption option = 1; 

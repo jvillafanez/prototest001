@@ -5,7 +5,7 @@ package ocis.services.config.v1;
 option go_package = "github.com/jvillafanez/prototest001/gen/ocis/services/config/v1";
 
 import "google/api/annotations.proto";
-import "ocis/messages/v1/config.proto";
+import "ocis/messages/config/v1/config.proto";
 
 service ConfigService {
 	rpc GetConfig(GetConfigRequest) returns (GetConfigResponse) {
@@ -19,5 +19,5 @@ service ConfigService {
 message GetConfigRequest {}
 
 message GetConfigResponse {
-  ocis.messages.v1.Config config = 1;
+  ocis.messages.config.v1.Config config = 1;
 }

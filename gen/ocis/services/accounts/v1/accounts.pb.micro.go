@@ -5,7 +5,7 @@ package v1
 
 import (
 	fmt "fmt"
-	v1 "github.com/jvillafanez/prototest001/gen/ocis/messages/v1"
+	v1 "github.com/jvillafanez/prototest001/gen/ocis/messages/accounts/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	proto "google.golang.org/protobuf/proto"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"

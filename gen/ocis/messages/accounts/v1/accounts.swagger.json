@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "ocis/messages/v1/config.proto",
+    "title": "ocis/messages/accounts/v1/accounts.proto",
     "version": "version not set"
   },
   "consumes": [

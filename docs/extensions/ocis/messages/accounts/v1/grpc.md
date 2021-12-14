@@ -11,7 +11,7 @@ geekdocFilePath: grpc.md
 
 
 
-## ocis/messages/v1/accounts.proto
+## ocis/messages/accounts/v1/accounts.proto
 
 ### Account
 
@@ -115,45 +115,6 @@ They are also used to keep a history of old usernames.
 | password_policies | [string](#string) | repeated | Specifies password policies for the user. This value is an enumeration with one possible value being “DisableStrongPassword”, which allows weaker passwords than the default policy to be specified. “DisablePasswordExpiration” can also be specified. |
 | force_change_password_next_sign_in | [bool](#bool) |  | true* if the user must change her password on the next login; otherwise false. |
 | force_change_password_next_sign_in_with_mfa | [bool](#bool) |  | If *true*, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false. |
-
-
-
-## ocis/messages/v1/config.proto
-
-### ComplexOption
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [Config](#config) |  |  |
-
-### Config
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| option | [ConfigOption](#configoption) | repeated |  |
-
-### ConfigOption
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| plainOption | [PlainOption](#plainoption) |  |  |
-| nestedOption | [ComplexOption](#complexoption) |  |  |
-
-### PlainOption
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  |  |
-| value | [string](#string) |  |  |
 
 
 ## Scalar Value Types

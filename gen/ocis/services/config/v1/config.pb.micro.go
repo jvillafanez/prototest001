@@ -5,7 +5,7 @@ package v1
 
 import (
 	fmt "fmt"
-	_ "github.com/jvillafanez/prototest001/gen/ocis/messages/v1"
+	_ "github.com/jvillafanez/prototest001/gen/ocis/messages/config/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	proto "google.golang.org/protobuf/proto"
 	math "math"

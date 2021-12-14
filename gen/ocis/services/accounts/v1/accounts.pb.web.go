@@ -13,7 +13,7 @@ import (
 	"github.com/golang/protobuf/jsonpb"
 
 	ptypesempty "github.com/golang/protobuf/ptypes/empty"
-	messagesv1 "github.com/jvillafanez/prototest001/gen/ocis/messages/v1"
+	accountsv1 "github.com/jvillafanez/prototest001/gen/ocis/messages/accounts/v1"
 )
 
 type webAccountsServiceHandler struct {
@@ -49,7 +49,7 @@ func (h *webAccountsServiceHandler) ListAccounts(w http.ResponseWriter, r *http.
 
 func (h *webAccountsServiceHandler) GetAccount(w http.ResponseWriter, r *http.Request) {
 	req := &GetAccountRequest{}
-	resp := &messagesv1.Account{}
+	resp := &accountsv1.Account{}
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusPreconditionFailed)
@@ -71,7 +71,7 @@ func (h *webAccountsServiceHandler) GetAccount(w http.ResponseWriter, r *http.Re
 
 func (h *webAccountsServiceHandler) CreateAccount(w http.ResponseWriter, r *http.Request) {
 	req := &CreateAccountRequest{}
-	resp := &messagesv1.Account{}
+	resp := &accountsv1.Account{}
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusPreconditionFailed)
@@ -93,7 +93,7 @@ func (h *webAccountsServiceHandler) CreateAccount(w http.ResponseWriter, r *http
 
 func (h *webAccountsServiceHandler) UpdateAccount(w http.ResponseWriter, r *http.Request) {
 	req := &UpdateAccountRequest{}
-	resp := &messagesv1.Account{}
+	resp := &accountsv1.Account{}
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusPreconditionFailed)
@@ -181,7 +181,7 @@ func (h *webGroupsServiceHandler) ListGroups(w http.ResponseWriter, r *http.Requ
 
 func (h *webGroupsServiceHandler) GetGroup(w http.ResponseWriter, r *http.Request) {
 	req := &GetGroupRequest{}
-	resp := &messagesv1.Group{}
+	resp := &accountsv1.Group{}
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusPreconditionFailed)
@@ -203,7 +203,7 @@ func (h *webGroupsServiceHandler) GetGroup(w http.ResponseWriter, r *http.Reques
 
 func (h *webGroupsServiceHandler) CreateGroup(w http.ResponseWriter, r *http.Request) {
 	req := &CreateGroupRequest{}
-	resp := &messagesv1.Group{}
+	resp := &accountsv1.Group{}
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusPreconditionFailed)
@@ -225,7 +225,7 @@ func (h *webGroupsServiceHandler) CreateGroup(w http.ResponseWriter, r *http.Req
 
 func (h *webGroupsServiceHandler) UpdateGroup(w http.ResponseWriter, r *http.Request) {
 	req := &UpdateGroupRequest{}
-	resp := &messagesv1.Group{}
+	resp := &accountsv1.Group{}
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusPreconditionFailed)
@@ -269,7 +269,7 @@ func (h *webGroupsServiceHandler) DeleteGroup(w http.ResponseWriter, r *http.Req
 
 func (h *webGroupsServiceHandler) AddMember(w http.ResponseWriter, r *http.Request) {
 	req := &AddMemberRequest{}
-	resp := &messagesv1.Group{}
+	resp := &accountsv1.Group{}
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusPreconditionFailed)
@@ -291,7 +291,7 @@ func (h *webGroupsServiceHandler) AddMember(w http.ResponseWriter, r *http.Reque
 
 func (h *webGroupsServiceHandler) RemoveMember(w http.ResponseWriter, r *http.Request) {
 	req := &RemoveMemberRequest{}
-	resp := &messagesv1.Group{}
+	resp := &accountsv1.Group{}
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, err.Error(), http.StatusPreconditionFailed)

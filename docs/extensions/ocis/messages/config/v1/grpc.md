@@ -11,29 +11,43 @@ geekdocFilePath: grpc.md
 
 
 
-## ocis/services/config/v1/config.proto
+## ocis/messages/config/v1/config.proto
 
-### GetConfigRequest
-
-
-
-
-### GetConfigResponse
+### ComplexOption
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| config | [ocis.messages.config.v1.Config](../../../messages/config/v1/grpc.md#config) |  |  |
+| key | [string](#string) |  |  |
+| value | [Config](#config) |  |  |
+
+### Config
 
 
-### ConfigService
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| option | [ConfigOption](#configoption) | repeated |  |
+
+### ConfigOption
 
 
 
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| GetConfig | [GetConfigRequest](#getconfigrequest) | [GetConfigResponse](#getconfigresponse) |  |
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| plainOption | [PlainOption](#plainoption) |  |  |
+| nestedOption | [ComplexOption](#complexoption) |  |  |
+
+### PlainOption
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+
 
 ## Scalar Value Types
 
