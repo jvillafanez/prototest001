@@ -9,6 +9,8 @@ geekdocFilePath: grpc.md
 
 {{< toc >}}
 
+
+
 ## ocis/services/config/v1/config.proto
 
 ### GetConfigRequest
@@ -22,7 +24,13 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| config | [ocis.messages.v1.Config](#ocismessagesv1config) |  |  |
+
+	
+	
+	
+| config | [ocis.messages.v1.Config](../../../messages/v1/grpc.md#config) |  |  |
+
+
 
 
 ### ConfigService
@@ -52,3 +60,4 @@ geekdocFilePath: grpc.md
 | {{< div id="bool" content="bool" >}} |  | bool | boolean |
 | {{< div id="string" content="string" >}} | A string must always contain UTF-8 encoded or 7-bit ASCII text. | string | String |
 | {{< div id="bytes" content="bytes" >}} | May contain any arbitrary sequence of bytes. | string | ByteString |
+

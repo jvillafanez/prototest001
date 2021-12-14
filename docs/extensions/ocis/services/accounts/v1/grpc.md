@@ -9,6 +9,8 @@ geekdocFilePath: grpc.md
 
 {{< toc >}}
 
+
+
 ## ocis/services/accounts/v1/accounts.proto
 
 ### AddMemberRequest
@@ -17,8 +19,16 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+
+	
 | group_id | [string](#string) |  | The id of the group to add a member to |
+
+
+
+	
 | account_id | [string](#string) |  | The account id to add |
+
+
 
 ### CreateAccountRequest
 
@@ -26,7 +36,13 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| account | [ocis.messages.v1.Account](#ocismessagesv1account) |  | The account resource to create |
+
+	
+	
+	
+| account | [ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) |  | The account resource to create |
+
+
 
 ### CreateGroupRequest
 
@@ -34,7 +50,13 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| group | [ocis.messages.v1.Group](#ocismessagesv1group) |  | The account resource to create |
+
+	
+	
+	
+| group | [ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) |  | The account resource to create |
+
+
 
 ### DeleteAccountRequest
 
@@ -42,7 +64,11 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+
+	
 | id | [string](#string) |  |  |
+
+
 
 ### DeleteGroupRequest
 
@@ -50,7 +76,11 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+
+	
 | id | [string](#string) |  |  |
+
+
 
 ### GetAccountRequest
 
@@ -58,7 +88,11 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+
+	
 | id | [string](#string) |  |  |
+
+
 
 ### GetGroupRequest
 
@@ -66,7 +100,11 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+
+	
 | id | [string](#string) |  |  |
+
+
 
 ### ListAccountsRequest
 
@@ -74,9 +112,23 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+
+	
 | page_size | [int32](#int32) |  | Optional. The maximum number of accounts to return in the response |
+
+
+
+	
 | page_token | [string](#string) |  | Optional. A pagination token returned from a previous call to `Get` that indicates from where search should continue |
+
+
+
+	
 | field_mask | [google.protobuf.FieldMask](#googleprotobuffieldmask) |  | Optional. Used to specify a subset of fields that should be returned by a get operation or modified by an update operation. |
+
+
+
+	
 | query | [string](#string) |  | Optional. Search criteria used to select the accounts to return. If no search criteria is specified then all accounts will be returned
 
 TODO update query language Query expressions can be used to restrict results based upon the account properties where the operators `=`, `NOT`, `AND` and `OR` can be used along with the suffix wildcard symbol `*`.
@@ -87,14 +139,26 @@ Some example queries are:
 
 * Query `display_name=Th*` returns accounts whose display_name starts with "Th" * Query `email=foo@example.com` returns accounts with `email` set to `foo@example.com` * Query `display_name=\\"Test String\\"` returns accounts with display names that include both "Test" and "String" |
 
+
+
 ### ListAccountsResponse
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| accounts | [ocis.messages.v1.Account](#ocismessagesv1account) | repeated | The field name should match the noun "accounts" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
+
+	
+	
+	
+| accounts | [ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) | repeated | The field name should match the noun "accounts" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
+
+
+
+	
 | next_page_token | [string](#string) |  | Token to retrieve the next page of results, or empty if there are no more results in the list |
+
+
 
 ### ListGroupsRequest
 
@@ -102,9 +166,23 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+
+	
 | page_size | [int32](#int32) |  | Optional. The maximum number of groups to return in the response |
+
+
+
+	
 | page_token | [string](#string) |  | Optional. A pagination token returned from a previous call to `Get` that indicates from where search should continue |
+
+
+
+	
 | field_mask | [google.protobuf.FieldMask](#googleprotobuffieldmask) |  | Optional. Used to specify a subset of fields that should be returned by a get operation or modified by an update operation. |
+
+
+
+	
 | query | [string](#string) |  | Optional. Search criteria used to select the groups to return. If no search criteria is specified then all groups will be returned
 
 TODO update query language Query expressions can be used to restrict results based upon the account properties where the operators `=`, `NOT`, `AND` and `OR` can be used along with the suffix wildcard symbol `*`.
@@ -114,6 +192,8 @@ The string properties in a query expression should use escaped quotes for values
 Some example queries are:
 
 * Query `display_name=Th*` returns accounts whose display_name starts with "Th" * Query `display_name=\\"Test String\\"` returns groups with display names that include both "Test" and "String" |
+
+
 
 ### ListGroupsResponse
 
@@ -121,8 +201,18 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| groups | [ocis.messages.v1.Group](#ocismessagesv1group) | repeated | The field name should match the noun "group" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
+
+	
+	
+	
+| groups | [ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) | repeated | The field name should match the noun "group" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
+
+
+
+	
 | next_page_token | [string](#string) |  | Token to retrieve the next page of results, or empty if there are no more results in the list |
+
+
 
 ### ListMembersRequest
 
@@ -130,9 +220,23 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+
+	
 | page_size | [int32](#int32) |  |  |
+
+
+
+	
 | page_token | [string](#string) |  | Optional. A pagination token returned from a previous call to `Get` that indicates from where search should continue |
+
+
+
+	
 | field_mask | [google.protobuf.FieldMask](#googleprotobuffieldmask) |  | Optional. Used to specify a subset of fields that should be returned by a get operation or modified by an update operation. |
+
+
+
+	
 | query | [string](#string) |  | Optional. Search criteria used to select the groups to return. If no search criteria is specified then all groups will be returned
 
 TODO update query language Query expressions can be used to restrict results based upon the account properties where the operators `=`, `NOT`, `AND` and `OR` can be used along with the suffix wildcard symbol `*`.
@@ -142,7 +246,13 @@ The string properties in a query expression should use escaped quotes for values
 Some example queries are:
 
 * Query `display_name=Th*` returns accounts whose display_name starts with "Th" * Query `display_name=\\"Test String\\"` returns groups with display names that include both "Test" and "String" |
+
+
+
+	
 | id | [string](#string) |  | The id of the group to list members from |
+
+
 
 ### ListMembersResponse
 
@@ -150,8 +260,18 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| members | [ocis.messages.v1.Account](#ocismessagesv1account) | repeated | The field name should match the noun "members" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
+
+	
+	
+	
+| members | [ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) | repeated | The field name should match the noun "members" in the method name. There will be a maximum number of items returned based on the page_size field in the request |
+
+
+
+	
 | next_page_token | [string](#string) |  | Token to retrieve the next page of results, or empty if there are no more results in the list |
+
+
 
 ### RebuildIndexRequest
 
@@ -169,8 +289,16 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+
+	
 | group_id | [string](#string) |  | The id of the group to remove a member from |
+
+
+
+	
 | account_id | [string](#string) |  | The account id to remove |
+
+
 
 ### UpdateAccountRequest
 
@@ -178,8 +306,18 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| account | [ocis.messages.v1.Account](#ocismessagesv1account) |  | The account resource which replaces the resource on the server |
+
+	
+	
+	
+| account | [ocis.messages.v1.Account](../../../messages/v1/grpc.md#account) |  | The account resource which replaces the resource on the server |
+
+
+
+	
 | update_mask | [google.protobuf.FieldMask](#googleprotobuffieldmask) |  | The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask |
+
+
 
 ### UpdateGroupRequest
 
@@ -187,8 +325,18 @@ Some example queries are:
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| group | [ocis.messages.v1.Group](#ocismessagesv1group) |  | The group resource which replaces the resource on the server |
+
+	
+	
+	
+| group | [ocis.messages.v1.Group](../../../messages/v1/grpc.md#group) |  | The group resource which replaces the resource on the server |
+
+
+
+	
 | update_mask | [google.protobuf.FieldMask](#googleprotobuffieldmask) |  | The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask |
+
+
 
 
 ### AccountsService
@@ -247,3 +395,4 @@ https://cloud.google.com/apis/design/naming_convention?hl=de
 | {{< div id="bool" content="bool" >}} |  | bool | boolean |
 | {{< div id="string" content="string" >}} | A string must always contain UTF-8 encoded or 7-bit ASCII text. | string | String |
 | {{< div id="bytes" content="bytes" >}} | May contain any arbitrary sequence of bytes. | string | ByteString |
+
