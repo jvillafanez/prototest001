@@ -24,13 +24,7 @@ geekdocFilePath: grpc.md
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-
-	
-	
-	
 | config | [ocis.messages.v1.Config](../../../messages/v1/grpc.md#config) |  |  |
-
-
 
 
 ### ConfigService
